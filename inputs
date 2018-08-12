@@ -1,0 +1,20 @@
+# Common inputs for root CA creation and testing scripts
+IPSERVER=172.31.98.148
+HOSTSERVER="server.myserver.com"
+IPCLIENT=172.31.118.15
+HOSTCLIENT="client.myserver.com"
+# Root CA information
+CA_C="US" # country
+CA_ST="TX" # state
+CA_L="Houston" # location
+CA_O="CertOrg" # organization
+# Apache webserver certificate information
+WS_C="US" # country
+WS_ST="TX" # state
+WS_L="Houston" # location
+WS_O="CMEI" # organization
+WS_OU="IT" # organizational unit
+WS_CN="$HOSTSERVER" # common name
+
+
+
