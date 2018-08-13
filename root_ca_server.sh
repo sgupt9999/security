@@ -29,6 +29,26 @@ rm -rf /tmp/rootca*
 # generate key and certificate for root CA
 MESSAGE="Generating root CA certficate"
 print_msg_start
+
+# create config file
+cat > /etc/pki/tls/certs/openssl.cnf <<EOF
+[ req ]
+default_bits        = 4096
+default_md          = sha384
+prompt            = yes
+x509_extensions     = v3_ca
+distinguished_name  = req_distinguished_name
+
+[ req_distinguished_name ]
+
+[ v3_ca ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+EOF
+
+
 openssl req -config /etc/pki/tls/certs/openssl.cnf -newkey rsa:4096 -nodes -x509 -days 3650 -sha384 -extensions v3_ca -subj "/C=$CA_C/ST=$CA_ST/L=$CA_L/O=$CA_O" -keyout /etc/pki/tls/certs/rootca.key -out /etc/pki/tls/certs/rootca.crt >&5 2>&5
 
 if [[ $COPY_ROOT_CA_CERT_TO_TMP == "yes" ]]

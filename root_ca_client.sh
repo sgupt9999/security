@@ -34,7 +34,7 @@ MESSAGE="Install new root CA cerritifcate on this machine.Need to ssh to the ser
 print_msg_start
 echo
 update-ca-trust enable
-scp user@$IPSERVER:/tmp/rootca.crt /etc/pki/ca-trust/source/anchors/
+scp $SUSER@$IPSERVER:/tmp/rootca.crt /etc/pki/ca-trust/source/anchors/
 chmod 0600 /etc/pki/ca-trust/source/anchors/rootca.crt
 update-ca-trust extract
 print_msg_done
