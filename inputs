@@ -1,6 +1,7 @@
 # Common inputs for root CA creation and testing scripts
-IPSERVER=172.31.98.148
-HOSTSERVER="server.myserver.com"
+IPSERVER=172.31.21.227
+#HOSTSERVER="garfield99992.mylabserver.com"
+HOSTSERVER="54.191.33.12"
 IPCLIENT=172.31.118.15
 HOSTCLIENT="client.myserver.com"
 # Root CA information
@@ -15,6 +16,8 @@ WS_L="Houston" # location
 WS_O="CMEI" # organization
 WS_OU="IT" # organizational unit
 WS_CN="$HOSTSERVER" # common name
+LOG_FILE="/tmp/root-ca.log"
+COPY_ROOT_CA_CERT_TO_TMP="yes" # copy the cert to server's tmp directory so client can scp
 
 
 
