@@ -30,7 +30,7 @@ rm -rf /tmp/rootca*
 MESSAGE="Generating root CA certficate"
 print_msg_start
 
-# create config file
+# create config file for root CA certificate
 cat > /etc/pki/tls/certs/openssl.cnf <<EOF
 [ req ]
 default_bits        = 4096
@@ -70,5 +70,5 @@ chmod 0600 /etc/pki/tls/certs/myserver.*
 chmod 0600 /etc/pki/tls/certs/rootca.*
 
 install_httpd
-echo "You can successfully view the site with a certfictae installed by a new root CA" > /var/www/html/index.html
+echo "You can successfully view the site with a certificate installed by a new root CA" > /var/www/html/index.html
 

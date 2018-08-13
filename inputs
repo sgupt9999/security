@@ -1,6 +1,6 @@
 # Common inputs for root CA creation and testing scripts
-IPSERVER=172.31.45.157
-HOSTSERVER="ec2-18-223-24-171.us-east-2.compute.amazonaws.com"
+IPSERVER=172.31.23.254
+HOSTSERVER="garfield99994.mylabserver.com"
 #HOSTSERVER="18.223.24.171"
 IPCLIENT=172.31.118.15
 HOSTCLIENT="client.myserver.com"
@@ -18,7 +18,7 @@ WS_OU="IT" # organizational unit
 WS_CN="$HOSTSERVER" # common name
 LOG_FILE="/tmp/root-ca.log"
 COPY_ROOT_CA_CERT_TO_TMP="yes" # copy the cert to server's tmp directory so client can scp
-SUSER="ec2-user" # server user for scp
+SUSER="user" # server user for scp
 
 
 
